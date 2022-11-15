@@ -87,13 +87,16 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-// console.log finances arrays lenght
+// console.log finances arrays length
 
-//create sum variable
+//create sum variable, create new empty array arrayNumbers , delare average
 var sum = 0;
+var arrayNumbers = [];
+var average = 0;
+
 //loop over first array
 for (var i = 0; i < finances.length; i++) {
-  //   console.log(finances[i]);
+  // console.log(finances[i]);
   // at this point [i] is eachIndex of array finances[i] --> this is what we printing [0]["Nov-2016", 2041556] <--
   //                                                                                    [1]["Sep-2014", 1241542]
   //                                                                                    [2]["..."]
@@ -111,11 +114,31 @@ for (var i = 0; i < finances.length; i++) {
     // then i will print out ${sum}
     //  ( because each iteration ${sum} becomes sum before and add current one in the iteration),
     if (typeof finances[i][j] !== "string") {
+      // this is to change sum from 0 to the total after iteration
       sum = sum + finances[i][j];
+      arrayNumbers.push(finances[i][j]);
+      average = finances[i][j] / finances.length;
+      // console.log(finances[i][j]);
     }
   }
 }
+// calculations to see max num in arrayNumbers and min num.
+var maxNum = Math.max(...arrayNumbers);
+var minNum = Math.min(...arrayNumbers);
 
+var indexMax = arrayNumbers.indexOf(maxNum);
+var indexMin = arrayNumbers.indexOf(minNum);
+//find out which index so I can use that in main console.log
+console.log(indexMax, maxNum, indexMin, minNum);
+
+// console.log(arrayNumbers);
+// Main console.log that will print out the results
 console.log(
-  ` Financial Analysis\n ------------------------\n Total Months:${finances.length}\n Total:$${sum}`
+  ` Financial Analysis\n ------------------------\n Total Months:${
+    finances.length
+  }\n Total:$${sum}\n Avarage Change:${average.toFixed(
+    2
+  )}\n Greaterst Increase in Profits: $${
+    arrayNumbers[25]
+  }\n Greatest Decrease in Profits $${arrayNumbers[44]}`
 );
