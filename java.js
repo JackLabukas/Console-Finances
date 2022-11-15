@@ -130,7 +130,6 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 
-console.log(arrayNumbers[arrayNumbers.indexOf(max)]);
 // calculations to see max num in arrayNumbers and min num.
 var maxNum = Math.max(...arrayNumbers);
 var minNum = Math.min(...arrayNumbers);
@@ -138,7 +137,7 @@ var minNum = Math.min(...arrayNumbers);
 var indexMax = arrayNumbers.indexOf(maxNum);
 var indexMin = arrayNumbers.indexOf(minNum);
 // find out which index so I can use that in main console.log
-console.log(indexMax, maxNum, indexMin, minNum);
+// console.log(indexMax, maxNum, indexMin, minNum);
 
 // console.log(arrayNumbers);
 // Main console.log that will print out the results
