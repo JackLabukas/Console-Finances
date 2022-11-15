@@ -19,6 +19,8 @@ To use this please open this at given URL and then open the console to see the c
 
 # URL for deployed project
 
+https://jacklabukas.github.io/Console-Finances/
+
 # Contact
 
 If you have any questions, please contact me at:
