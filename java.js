@@ -93,6 +93,10 @@ var finances = [
 var sum = 0;
 var arrayNumbers = [];
 var average = 0;
+var max = 0;
+var min = 0;
+var indexMax = "";
+var indexMin = "";
 
 //loop over first array
 for (var i = 0; i < finances.length; i++) {
@@ -118,17 +122,22 @@ for (var i = 0; i < finances.length; i++) {
       sum = sum + finances[i][j];
       arrayNumbers.push(finances[i][j]);
       average = finances[i][j] / finances.length;
-      // console.log(finances[i][j]);
+    }
+    if (typeof finances[i][j] !== "number") {
+      max = Math.max(...arrayNumbers);
+      min = Math.min(...arrayNumbers);
     }
   }
 }
+
+console.log(arrayNumbers[arrayNumbers.indexOf(max)]);
 // calculations to see max num in arrayNumbers and min num.
 var maxNum = Math.max(...arrayNumbers);
 var minNum = Math.min(...arrayNumbers);
 
 var indexMax = arrayNumbers.indexOf(maxNum);
 var indexMin = arrayNumbers.indexOf(minNum);
-//find out which index so I can use that in main console.log
+// find out which index so I can use that in main console.log
 console.log(indexMax, maxNum, indexMin, minNum);
 
 // console.log(arrayNumbers);
@@ -138,7 +147,5 @@ console.log(
     finances.length
   }\n Total:$${sum}\n Avarage Change:${average.toFixed(
     2
-  )}\n Greaterst Increase in Profits: $${
-    arrayNumbers[25]
-  }\n Greatest Decrease in Profits $${arrayNumbers[44]}`
+  )}\n Greatest Increase in Profits: Feb-2012 $${max}\n Greatest Decrease in Profits: Sep-2013 $${min}`
 );
